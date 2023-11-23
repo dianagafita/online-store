@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+}
+
+.menu:hover {
+  color: white;
+}
+
+.menu a:active {
+  text-decoration: none;
+}

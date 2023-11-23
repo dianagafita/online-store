@@ -1,0 +1,135 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1vw;
+  min-height: 140vw;
+  background-color: rgb(239, 239, 241);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex: 3 0;
+  justify-content: space-evenly;
+  border: 0.1px solid rgb(244, 243, 243);
+  border-radius: 1rem;
+  list-style-type: none;
+  margin: 0.5rem;
+  padding: 0;
+  background: rgb(252, 251, 251);
+  box-shadow: 10px 5px 5px rgb(228, 227, 227);
+}
+
+.list li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid white;
+}
+
+.list li:last-child {
+  border: none;
+}
+
+.list li img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.list li a {
+  color: black;
+}
+
+.list li div {
+  padding: 1rem;
+  color: black;
+}
+
+.list li div:not(:first-child) {
+  flex-basis: 20%;
+}
+
+.quantity {
+  padding: 2rem;
+}
+.list .removeBtn {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  background: rgb(181, 184, 190);
+  opacity: 0.8;
+  outline: none;
+}
+
+.list .removeBtn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.checkout {
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  border: 0.1px solid white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.checkout > div {
+  margin-right: 0;
+  font-size: 1.4rem;
+  margin: 1rem;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.checkout .foods_count {
+  color: rgb(0, 0, 0);
+  margin-bottom: 1.5rem;
+}
+.checkout .total_price {
+  color: rgb(16, 130, 41);
+}
+.checkout .foods_count::before {
+  font-size: large;
+  content: "Items: ";
+  color: rgb(10, 10, 10);
+}
+.checkout .total_price::before {
+  content: "Total Price: ";
+  color: rgb(10, 10, 10);
+}
+
+.checkout a {
+  padding: 1rem;
+  color: white;
+  background: rgb(50, 50, 50);
+  display: block;
+  width: 80%;
+  height: auto;
+  border-radius: 1rem;
+  margin-left: 1.5rem;
+  text-align: center;
+  justify-self: center;
+  margin-bottom: 0.5rem;
+}
+
+.checkout a:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

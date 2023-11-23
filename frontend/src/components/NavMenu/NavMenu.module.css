@@ -1,0 +1,16 @@
+.button {
+  box-shadow: 10px 5px 5px rgb(228, 227, 227);
+  border: none;
+}
+
+.menu {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  height: fit-content;
+  background: white;
+  color: white;
+  border-radius: 0 0 1rem 0;
+  opacity: 0.95;
+  z-index: 999;
+}

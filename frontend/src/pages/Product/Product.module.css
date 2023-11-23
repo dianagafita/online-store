@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 3rem 0.5rem 3rem;
+}
+.container > * {
+  min-width: 15rem;
+  max-width: 20rem;
+}
+
+.image {
+  border-radius: 3rem;
+  flex: 1 0;
+  object-fit: cover;
+  height: 100%;
+  width: 20rem;
+  margin: 1rem;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  border-radius: 3rem;
+  padding: 2rem;
+  color: rgb(30, 30, 30);
+  margin-left: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10rem;
+  margin: 2rem;
+  color: rgb(80, 80, 80);
+  justify-content: flex-end; /* Align content to the start */
+}
+
+.description h1 {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.color {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.3rem 0.5rem 0.3rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  background: rgb(232, 231, 231);
+  border-radius: 2rem;
+}
+
+.memory {
+  margin-top: 1rem;
+}
+
+.cook_time span {
+  padding: 0.6rem 2rem 0.6rem 0;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  margin: 2rem 2rem 2rem 0;
+  color: rgb(15, 112, 57);
+}
+.price::before {
+  content: "Price: ";
+  color: rgb(150, 150, 150);
+}
+
+.button {
+  color: white;
+  background: rgb(50, 50, 50);
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

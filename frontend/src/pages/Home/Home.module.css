@@ -1,0 +1,89 @@
+.slide {
+  margin: auto;
+  width: 70%;
+}
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  padding: 6rem;
+  border-radius: 1rem;
+}
+
+.each-slide-effect span {
+  padding: 10px 10px;
+  font-size: 20px;
+  background: #efefef;
+  opacity: 0.8;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.megaMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phones {
+  margin: 5rem;
+}
+
+.phones div * {
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  margin: 1rem auto 2rem;
+  font-size: medium;
+}
+
+.phoneImage {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 330px;
+  min-width: 100px;
+  margin: auto 1rem;
+  text-align: center;
+  font-family: arial;
+  border-radius: 1rem;
+}
+
+.phonePrice {
+  color: rgb(11, 93, 47);
+  font-size: 18px;
+  margin: 0.1rem;
+}
+
+.phoneName {
+  color: #000;
+}
+
+.card button {
+  margin-top: 1rem;
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 1rem;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
