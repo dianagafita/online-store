@@ -71,7 +71,7 @@ export const data_laptops = [
   {
     id: "3",
     name: "Galaxy Book3 Pro",
-    img: "https://lcdn.altex.ro/resize/media/catalog/product/s/a/2bd48d28d1c32adea0e55139a4e6434a/samsung-galaxy-z-fold4-phantom-black_(8)_73e68e9d.jpg",
+    img: "https://www.alienstore.ro/cdn/shop/files/370247293_1035621917482508_7374334465298689836_n_720x.png?v=1699653850",
     price: 1449.99,
     memory: "SSD 256GB",
     colour: "Graphite",

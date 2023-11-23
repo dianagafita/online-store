@@ -25,6 +25,7 @@ export default function NavMenu() {
     label: <MegaMenu onClick={handleItemClick} />,
     style: {
       height: "fit-content",
+
       padding: 0,
       marginRight: 0,
       backgroundColor: "white",

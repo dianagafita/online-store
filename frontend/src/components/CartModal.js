@@ -14,6 +14,7 @@ const CartModal = ({ show, handleClose, cart }) => {
   const { removeFromCart, changeQuantiy } = useCart();
   const totalPrice = 3000;
   const remainingPrice = totalPrice - cart.totalPrice;
+
   const percentage =
     Number(cart.totalPrice) >= totalPrice
       ? 100

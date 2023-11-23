@@ -18,6 +18,9 @@ import Price from "../../components/Price/Price";
 import { data_laptops } from "../../data";
 import CartModal from "../../components/CartModal";
 import { Offcanvas } from "react-bootstrap";
+import Thumbnails from "../../components/Thumbnails/Thumbnails";
+import FavIcon from "../../components/FavIcon/FavIcon";
+import Display from "./Display";
 
 const images = [
   {
@@ -100,32 +103,9 @@ export default function Home() {
       dispatchLaptop({ type: "LAPTOPS_LOADED", payload: prod })
     );
   }, []);
-  // const { cart } = useCart();
-  // const [showCart, setShowCart] = useState(false);
-
-  // const handleClose = () => setShowCart(false);
-  // const handleShow = () => setShowCart(true);
-
-  // return (
-  //   <>
-  //     <button onClick={handleShow}>Cart ({cart.totalCount})</button>
-
-  //     <Offcanvas show={showCart} onHide={handleClose}>
-  //       <Offcanvas.Body>
-  //         <CartModal showCart={showCart} handleClose={handleClose} />
-  //       </Offcanvas.Body>
-  //     </Offcanvas>
-  // const { cart } = useCart();
-  // const [showCart, setShowCart] = useState(false);
-
-  // const handleClose = () => setShowCart(false);
-  // const handleShow = () => setShowCart(true);
 
   return (
     <>
-      {/* <button onClick={handleShow}>Cart ({cart.totalCount})</button>
-      <CartModal showCart={showCart} handleClose={handleClose} /> */}
-
       <div className={classes.slide}>
         <Slide>
           {images.map((imag, index) => (
@@ -148,19 +128,7 @@ export default function Home() {
         <div>
           <Carousel showDots={true} responsive={responsive}>
             {phones.map((phone, phoneIndex) => (
-              <Link to={`/products/${phone.id}`}>
-                <div key={phoneIndex} className={classes.card}>
-                  <img
-                    src={phone.img}
-                    className={classes["phoneImage"]}
-                    alt={phone.name}
-                  />
-                  <h1 className={classes.phoneName}>{phone.name}</h1>
-                  <p className={classes.phonePrice}>
-                    <Price price={phone.price} />
-                  </p>
-                </div>
-              </Link>
+              <Display product={phone} />
             ))}
           </Carousel>
         </div>
@@ -168,18 +136,8 @@ export default function Home() {
           <h1>Laptops</h1>
 
           <Carousel showDots={true} responsive={responsive}>
-            {laptops.map((phone, phoneIndex) => (
-              <div key={phoneIndex} className={classes.card}>
-                <img
-                  src={phone.img}
-                  className={classes["phoneImage"]}
-                  alt={phone.name}
-                />
-                <h1 className={classes.phoneName}>{phone.name}</h1>
-                <p className={classes.phonePrice}>
-                  <Price price={phone.price} />
-                </p>
-              </div>
+            {laptops.map((laptop, phoneIndex) => (
+              <Display product={laptop} />
             ))}
           </Carousel>
         </div>
