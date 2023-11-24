@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
       toast.error("Login Failed");
     }
   };
+
   const register = async (data) => {
     try {
       const user = await userService.register(data);

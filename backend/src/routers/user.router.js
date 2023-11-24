@@ -10,6 +10,14 @@ const PASSWORD_HASH_SALT_ROUNDS = 10;
 
 const router = Router();
 
+router.get(
+  "/allUsers",
+  handler(async (req, res) => {
+    const users = await UserModel.find({});
+    res.send(users);
+  })
+);
+
 router.post(
   "/login",
   handler(async (req, res) => {
@@ -87,6 +95,7 @@ router.put(
     res.send();
   })
 );
+
 const generateTokenResponse = (user) => {
   const token = jwt.sign(
     {

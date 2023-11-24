@@ -14,3 +14,19 @@ body {
 a {
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: black;
+}
