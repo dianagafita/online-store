@@ -102,4 +102,13 @@ export const data_users = [
     address: "gh",
     isAdmin: false,
   },
+    {
+    id: "2",
+    name: "Diana",
+    email: "gafita.diana12@gmail.com",
+    password: "diana",
+    address: "Iasi",
+    isAdmin: true,
+  },
+
 ];
