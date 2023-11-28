@@ -26,3 +26,18 @@ export const updateFavorite = async (productId, isFavorite) => {
   });
   return data;
 };
+
+export const addProduct = async (registerData) => {
+  const { data } = await axios.post("/api/products/addProduct", registerData);
+};
+
+export const editProduct = async (id, prod) => {
+  const { data } = await axios.put("/api/products/editProduct/" + id, prod);
+  console.log(prod);
+  return data;
+};
+
+export const deleteProduct = async (id) => {
+  const { data } = await axios.put("/api/products/deleteProduct/" + id);
+  return data;
+};

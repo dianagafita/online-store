@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Menu, Space } from "antd";
 import { useNavigate } from "react-router-dom";
 
-const phone_items = [
+export const phone_items = [
   { label: "All Phones", key: "allPhones" },
   { label: "Apple", key: "apple" },
   { label: "Samsung", key: "samsungPhone" },
   { label: "Huawei", key: "huaweiPhone" },
 ];
 
-const laptop_items = [
+export const laptop_items = [
   { label: "All Laptops", key: "allLaptops" },
   { label: "Mac", key: "mac" },
   { label: "Samsung", key: "samsungLaptop" },

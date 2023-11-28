@@ -2,6 +2,12 @@
   margin: auto;
   width: 70%;
 }
+
+@media screen and (max-width: 500px) {
+  .slide {
+    width: 100%;
+  }
+}
 .each-slide-effect > div {
   display: flex;
   align-items: center;
@@ -63,7 +69,6 @@ h1 {
 .phonePrice {
   color: rgb(11, 93, 47);
   font-size: 18px;
-  margin: 0.1rem;
 }
 
 .phoneName {
@@ -86,4 +91,92 @@ h1 {
 
 .card button:hover {
   opacity: 0.7;
+}
+
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0.5rem;
+}
+
+.container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 310px;
+  text-align: center;
+  font-family: arial;
+  border-radius: 1rem;
+  list-style-type: none;
+  margin: 0.5rem 0 0 2rem;
+  height: 300px;
+  background-color: white;
+  position: relative;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.content {
+  position: relative;
+}
+
+.prodImg {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productName {
+  margin: auto;
+  font-size: large;
+  color: black;
+}
+
+.favoriteIcon {
+  position: absolute;
+  top: 2rem;
+  margin-right: 1rem;
+  right: 0;
+}
+
+.favorite {
+  font-size: 1.5rem;
+  color: rgb(213, 11, 11);
+  cursor: pointer;
+}
+
+.favorite.not {
+  color: gray;
+}
+
+.additionalInfo {
+  padding: 0 1rem;
+}
+
+.colour {
+  color: rgb(33, 32, 32);
+  font-size: medium;
+}
+
+.colour span {
+  color: rgb(132, 133, 133);
+}
+
+.price {
+  color: rgb(11, 93, 47);
+  font-size: 20px;
+  padding-top: 0.5rem;
 }

@@ -1,5 +1,10 @@
 import axios from "axios";
 
+export const getAllUsers = async () => {
+  const { data } = await axios.get("/api/users/allUsers");
+  return data;
+};
+
 export const getUser = () =>
   localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user"))

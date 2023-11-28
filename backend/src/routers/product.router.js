@@ -57,4 +57,52 @@ router.put(
   })
 );
 
+router.post(
+  "/addProduct",
+  handler(async (req, res) => {
+    const { name, memory, price, img, colour, tags, description } = req.body;
+    const product = await ProductModel.findOne({ name });
+    if (product) {
+      res.status(BAD_REQUEST).send("Product already exists.Go To Edit!");
+      return;
+    }
+
+    const newProduct = {
+      name,
+      memory,
+      price,
+      img,
+      colour,
+      tags,
+      description,
+    };
+    const result = ProductModel.create(newProduct);
+    res.send(result);
+  })
+);
+
+router.put(
+  "/editProduct/:id",
+  handler(async (req, res) => {
+    const { name, memory, price, img, colour, tags, description } = req.body;
+    console.log(name);
+    const prod = await ProductModel.findByIdAndUpdate(
+      req.params.id,
+      { name, memory, price, img, colour, tags, description },
+      { new: true }
+    );
+    console.log(prod);
+    res.send(prod);
+  })
+);
+
+router.put(
+  "/deleteProduct/:id",
+  handler(async (req, res) => {
+    const prod = await ProductModel.findByIdAndDelete(req.params.id);
+    console.log(prod);
+    res.send(prod);
+  })
+);
+
 export default router;

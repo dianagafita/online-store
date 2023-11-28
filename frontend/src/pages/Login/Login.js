@@ -18,11 +18,22 @@ export default function Login() {
   const [params] = useSearchParams();
   const returnUrl = params.get("returnUrl");
 
+  // useEffect(() => {
+  //   if (!user) return;
+  //   if (user.isAdmin === true) {
+  //     navigate("/");
+  //   }
+  //   // returnUrl ? navigate(returnUrl) : navigate("/");
+  // }, [user]);
+
   useEffect(() => {
     if (!user) return;
-
-    returnUrl ? navigate(returnUrl) : navigate("/");
-  }, [user]);
+    if (user.isAdmin === true) {
+      navigate("/");
+    } else {
+      navigate(returnUrl || "/");
+    }
+  }, [user, navigate, returnUrl]);
 
   const submit = async ({ email, password }) => {
     await login(email, password);
