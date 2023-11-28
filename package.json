@@ -1,5 +1,18 @@
 {
   "dependencies": {
     "react-pro-sidebar": "^1.1.0-alpha.1"
-  }
+  },
+  "name": "online-shop-v2-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start":"cd backend && npm start ",
+    "build":"cd frontend && npm run build",
+    "postbuild":"mv -f frontend/build backend/src/public"
+  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
