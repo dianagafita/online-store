@@ -36,9 +36,8 @@ export default function Users() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  console.log(users);
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "ID", flex: 1 },
     {
       field: "name",
       headerName: "NAME",
@@ -79,9 +78,11 @@ export default function Users() {
     <Box m="20px">
       <Header title="USERS" subtitle="Managing the Users" />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        // m="40px 0 0 0"
+        m="20px"
+        width={250}
         sx={{
+          overflow: "auto",
           "& .MuiDataGrid-root": {
             border: "none",
           },
@@ -103,7 +104,7 @@ export default function Users() {
           },
         }}
       >
-        <DataGrid rows={users} columns={columns} />
+        <DataGrid rows={users} columns={columns} autoHeight />
       </Box>
     </Box>
   );

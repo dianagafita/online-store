@@ -1,16 +1,15 @@
 import React, { useEffect, useReducer } from "react";
-import { data_users } from "../../../data";
 import { useTheme } from "@emotion/react";
 import { tokens } from "../../theme";
 import Header from "../dashboard/Header";
-import { Box, Tooltip } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import { getAllUsers } from "../../../services/userService";
 import { Typography } from "antd";
 import { getAll } from "../../../services/orderService";
 import PaymentsIcon from "@mui/icons-material/Payments";
+import { useNavigate } from "react-router-dom";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ORDERS_LOADED":
@@ -36,10 +35,23 @@ export default function Orders() {
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const navigate = useNavigate();
 
   console.log(orders);
+
   const columns = [
-    { field: "id", headerName: "ID" },
+    {
+      field: "id",
+      headerName: "ID",
+      renderCell: (params) => (
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate(`/orders/${params.row.id}`)}
+        >
+          {params.row.id}
+        </div>
+      ),
+    },
     {
       field: "name",
       headerName: "NAME",
@@ -48,22 +60,6 @@ export default function Orders() {
     },
     { field: "createdAt", headerName: "DATE", flex: 1 },
     { field: "totalPrice", headerName: "PRICE", flex: 1 },
-
-    // {
-    //   field: "items",
-    //   headerName: "ITEMS",
-    //   flex: 1,
-
-    //   renderCell: ({ row: { items } }) => {
-    //     const formattedItems = items.map((item) => item.prod.name).join(", ");
-    //     return (
-    //       <Tooltip title={formattedItems} placement="top">
-    //         <Typography style={{ color: "white" }}>{formattedItems}</Typography>
-    //       </Tooltip>
-    //     );
-    //   },
-    // },
-
     { field: "address", headerName: "ADDRESS", flex: 1 },
     {
       field: "status",
@@ -99,8 +95,8 @@ export default function Orders() {
     <Box m="20px">
       <Header title="ORDERS" subtitle="Managing the Orders" />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m="20px"
+        width={250}
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

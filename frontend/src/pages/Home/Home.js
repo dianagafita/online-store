@@ -1,25 +1,12 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import Carousel from "react-multi-carousel";
-import { data_phones } from "../../data";
 import "react-multi-carousel/lib/styles.css";
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import classes from "./Home.module.css";
 import img2 from "./images/166564D6-2FF0-4D52-9856-E0DA7CEF84BF_1_201_a.jpeg";
 import img3 from "./images/S23Ultra_groupkv_PC.jpg.avif";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { useCart } from "../../hooks/useCart";
-import {
-  filterProductsByTag,
-  getAll,
-  getById,
-} from "../../services/productServices";
-import Price from "../../components/Price/Price";
-import { data_laptops } from "../../data";
-import CartModal from "../../components/CartModal";
-import { Offcanvas } from "react-bootstrap";
-import Thumbnails from "../../components/Thumbnails/Thumbnails";
-import FavIcon from "../../components/FavIcon/FavIcon";
+import { filterProductsByTag } from "../../services/productServices";
 import Display from "./Display";
 
 const images = [
@@ -40,7 +27,6 @@ const images = [
 export default function Home() {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1024 },
       items: 4,
       slidesToSlide: 2,
@@ -126,8 +112,13 @@ export default function Home() {
         <h2>You might like:</h2>
         <h1>Phones</h1>
         <div>
-          <Carousel showDots={true} responsive={responsive}>
-            {phones.map((phone, phoneIndex) => (
+          <Carousel
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            swipeable={true}
+            showDots={true}
+            responsive={responsive}
+          >
+            {phones.map((phone) => (
               <Display product={phone} />
             ))}
           </Carousel>
@@ -135,8 +126,13 @@ export default function Home() {
         <div>
           <h1>Laptops</h1>
 
-          <Carousel showDots={true} responsive={responsive}>
-            {laptops.map((laptop, phoneIndex) => (
+          <Carousel
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            swipeable={true}
+            showDots={true}
+            responsive={responsive}
+          >
+            {laptops.map((laptop) => (
               <Display product={laptop} />
             ))}
           </Carousel>

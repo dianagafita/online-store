@@ -4,9 +4,6 @@ import { tokens } from "../theme";
 import Header from "../scenes/dashboard/Header";
 import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import { Typography } from "antd";
 import { getAll } from "../../services/productServices";
 import { useNavigate } from "react-router-dom";
 
@@ -63,7 +60,7 @@ export default function Products() {
 
   return (
     <Box m="20px">
-      <Header title="USERS" subtitle="Managing the Users" />
+      <Header title="PRODUCTS" subtitle="Managing the Products" />
       <Box
         m="40px 0 0 0"
         height="75vh"

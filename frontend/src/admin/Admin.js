@@ -13,6 +13,7 @@ import AuthRoute from "../components/AuthRoute/AuthRoute";
 import AddProduct from "./products/AddProduct";
 import Products from "./products/Products";
 import EditProduct from "./products/EditProduct";
+import OrderDetails from "./scenes/users/OrderDetails";
 
 function Admin() {
   const [theme, colorMode] = useMode();
@@ -28,17 +29,14 @@ function Admin() {
             <main className="content">
               <TopBar setIsSidebar={setIsSidebar} />
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/login" element={<Dashboard />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/orders" element={<Orders />} />
-                <Route path="/addUser" element={<AddUser />} />
+                {/* <Route path="/addUser" element={<AddUser />} /> */}
                 <Route path="/addProduct" element={<AddProduct />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/product/:id" element={<EditProduct />} />
-                {/*<Route path="/line" element={<Line />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/geography" element={<Geography />} /> */}
+                <Route path="/orders/:orderId" element={<OrderDetails />} />
               </Routes>
             </main>
           </div>

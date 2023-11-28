@@ -3,6 +3,7 @@ import classes from "./Home.module.css";
 import Price from "../../components/Price/Price";
 import FavIcon from "../../components/FavIcon/FavIcon";
 import { Link } from "react-router-dom";
+
 export default function Display({ product }) {
   return (
     <li key={product.id} className={classes.container}>

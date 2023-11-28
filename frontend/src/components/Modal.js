@@ -1,26 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./CartModal.module.css";
 import { useCart } from "../hooks/useCart";
-import { Avatar, Button, Drawer, List, Menu, Progress } from "antd";
-import { FaCheckCircle } from "react-icons/fa";
-import { IoMdCloseCircle } from "react-icons/io";
-import Price from "./Price/Price";
-import { ImBin } from "react-icons/im";
-import FavIcon from "./FavIcon/FavIcon";
-import MegaMenu from "./NavItems/NavItems";
+import { Drawer, Menu } from "antd";
+
 import "./Modal.css";
 import { logout } from "../services/userService";
-const Modal = ({ show, handleClose, cart }) => {
-  const navigate = useNavigate();
-  const { removeFromCart, changeQuantiy } = useCart();
-  const totalPrice = 3000;
-  const remainingPrice = totalPrice - cart.totalPrice;
 
-  const percentage =
-    Number(cart.totalPrice) >= totalPrice
-      ? 100
-      : ((cart.totalPrice / totalPrice) * 100).toFixed(2);
+const Modal = ({ show, handleClose }) => {
+  const navigate = useNavigate();
 
   function handleMenuClick(item) {
     if (item.key === "logout") {
@@ -41,7 +29,7 @@ const Modal = ({ show, handleClose, cart }) => {
         classNames="draw"
         onClose={handleClose}
         open={show}
-        style={{ marginTop: "2.6rem" }} // Move the Drawer 20 pixels down
+        style={{ marginTop: "2.6rem" }}
         width={200}
       >
         <div className="cont">

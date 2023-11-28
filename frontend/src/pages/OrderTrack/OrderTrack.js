@@ -9,7 +9,7 @@ import Title from "../../components/Title/Title";
 import Link from "antd/es/typography/Link";
 import Map from "../../components/Map/Map";
 
-export default function OrderTrack() {
+export default function OrderTrack({ showButton }) {
   const { orderId } = useParams();
 
   const [order, setOrder] = useState();
@@ -31,24 +31,25 @@ export default function OrderTrack() {
           <h1>Order #{order.id}</h1>
           <div className={classes.header}>
             <div>
-              <strong>Date</strong>
+              <strong>Date:</strong>
               <DateTime date={order.createdAt} />
             </div>
             <div>
-              <strong>Name</strong>
+              <strong style={{ marginRight: "10px" }}>Name:</strong>
               {order.name}
             </div>
             <div>
-              <strong>Address</strong>
+              <strong style={{ marginRight: "30px" }}>Address:</strong>
               {order.address}
             </div>
             <div>
-              <strong>State</strong>
+              <strong style={{ marginRight: "10px" }}>State:</strong>
               {order.status}
             </div>
+
             {order.paymentId && (
               <div>
-                <strong>Payment ID</strong>
+                <strong>Payment ID:</strong>
                 {order.paymentId}
               </div>
             )}
@@ -57,15 +58,21 @@ export default function OrderTrack() {
           <OrderItemsList order={order} />
         </div>
 
-        <div>
-          <Title title="Your Location" fontSize="1.6rem" />
-          <Map location={order.addressLatLng} readonly={true} />
-        </div>
+        {showButton && (
+          <div style={{ margin: "3rem" }}>
+            <Title title="Your Location" fontSize="1.6rem" />
+            <Map location={order.addressLatLng} readonly={true} />
+          </div>
+        )}
 
-        {order.status === "NEW" && (
+        {order.status === "NEW" && showButton && (
           <div className={classes.payment}>
             <Link to="/payment">Go To Payment</Link>
           </div>
+        )}
+
+        {order.status === "NEW" && !showButton && (
+          <div className={classes.payment}>Status: Not Payed</div>
         )}
       </div>
     )

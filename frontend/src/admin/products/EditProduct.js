@@ -1,6 +1,5 @@
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
-import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../scenes/dashboard/Header";
@@ -10,13 +9,15 @@ import {
   editProduct,
   getById,
 } from "../../services/productServices";
-import { toast } from "react-toastify";
+import Preview from "./Preview";
 
 export default function EditProduct() {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const { id } = useParams();
   const [product, setProduct] = useState({});
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const navigate = useNavigate();
 
   const handleFormSubmit = async (values) => {
@@ -171,6 +172,17 @@ export default function EditProduct() {
               >
                 Delete
               </Button>
+              <Button
+                onClick={handleOpen}
+                color="secondary"
+                variant="contained"
+              >
+                Preview
+              </Button>
+
+              {open && (
+                <Preview show={open} handleClose={handleClose} value={values} />
+              )}
               <Button type="submit" color="secondary" variant="contained">
                 Save
               </Button>
