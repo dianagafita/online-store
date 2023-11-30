@@ -9,22 +9,32 @@ To see a demo of the project: [VIEW DEMO](https://foodie-react.onrender.com/)
 
 
 ## What I learned creating this project: 
-# Frontend
+### Frontend
 
 ``` text
 CSS Styling
 
 Pages & Routing
 
-Working with mongoose
-
-Express routers
-
+Creating Hooks
 
 ```
+### Backend
+``` text
+Connencting to MongoDB
+
+Using Reducer
+
+Creating Model,Schema with mongoose
+
+Creating routes with Express
+```
+
 ## I worked with:
 
 ``` text
+Formik
+MUI Material
 MongoDB  for the backend
 Express.js
 React
